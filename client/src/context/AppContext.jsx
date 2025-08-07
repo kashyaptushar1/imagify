@@ -16,7 +16,7 @@ const AppContextProvider = (props)=>{
 
      const backendUrl = import.meta.env.VITE_BACKEND_URL
 
-    //  const navigate = useNavigate()
+     const navigate = useNavigate()
 
      const loadCreditData =  async ()=>{
         try{
@@ -40,6 +40,7 @@ const AppContextProvider = (props)=>{
                 loadCreditData()
                 return data.resultImage
                }else{
+                console.log("error hai")
                 toast.error(data.message)
                  loadCreditData()
                  if(data.creditBalance === 0){
@@ -71,10 +72,11 @@ const AppContextProvider = (props)=>{
     }
 
     return(
-
+        
         <AppContext.Provider value={value}>
             {props.children}
         </AppContext.Provider>
+       
     ) 
 } 
 export default AppContextProvider

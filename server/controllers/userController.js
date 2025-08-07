@@ -64,7 +64,7 @@ const userCredits = async (req , res)=>{
         const userId = req.userId;
      
         const user = await userModel.findById(userId)
-        res.json({success:true , credits:user.creditBalance , user:{name:user.name} })
+        res.json({success:true , credit:user.creditBalance , user:{name:user.name} })
 
 
 
